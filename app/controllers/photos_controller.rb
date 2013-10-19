@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
  
   def index
     @photos = Photo.all
@@ -12,7 +13,7 @@ class PhotosController < ApplicationController
 
   
   def new
-    @photo = Photo.new
+    @photo = current_user.photos.build
   end
 
   
@@ -21,7 +22,7 @@ class PhotosController < ApplicationController
 
   
   def create
-    @photo = Photo.new(photo_params)
+    @photo = current_user.photos.build(photo_params)
 
     respond_to do |format|
       if @photo.save
@@ -60,6 +61,11 @@ class PhotosController < ApplicationController
     
     def set_photo
       @photo = Photo.find(params[:id])
+    end
+
+    def correct_user
+      @photo = current_user.photos.find_by(id: params[:id])
+      redirect_to photos_path if @photo.nil?
     end
 
     def photo_params
