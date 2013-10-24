@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-  	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="description" content="Poodle Landing Page">
-	    <meta name="author" content="Mitch Cail">
-		  <title>Poodle</title>
-		  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-		  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		  <%= csrf_meta_tags %>
-		  <link href="css/bootstrap.css" rel="stylesheet">
-
-	    <!-- Add custom CSS here -->
-	    <link href="css/stylish-portfolio.css" rel="stylesheet">
-	    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	</head>
+<html>
+<head>
+  <title>Poodle</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 	<body>
-		<% flash.each do |name, msg|%>
-			<%= content_tag(:div, msg, class: "alert alert-info") %>
-		<% end %>
-		<%-# <%= render 'layouts/header' -%> 
-		<%= yield %>
+		<%= render 'layouts/header' %> 
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-9">
+					<% flash.each do |name, msg|%>
+						<%= content_tag(:div, msg, class: "alert alert-info") %>
+					<% end %>
+
+					<%= yield %>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		
 	</body>
 </html>
