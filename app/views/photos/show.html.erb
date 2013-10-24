@@ -1,9 +1,25 @@
-<%= image_tag @photo.image.url %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @photo.description %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
+<br/>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading center">
+				<%= image_tag @photo.image.url %>
+			</div>
+			<div class="panel-body">
+				<p>
+				  <%= @photo.description %>
+				  <p><strong><%= @photo.user.email if @photo.user %></strong></p>
+				</p>
+			
+
+				<% if @photo.user == current_user %>
+					<%= link_to 'Edit', edit_photo_path(@photo) %>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</div>
+

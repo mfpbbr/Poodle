@@ -1,0 +1,81 @@
+<!-- Full Page Image Header Area -->
+<div id="top" class="header">
+  <div class="vert-text">
+  	<h1>Coming Soon</h1>
+  	<h3>check out our progress at <a href='https://github.com/mitchcail/Poodle'>GitHub</a></h3>
+  	<br/>
+  	<br/>
+  	<br/>
+    <h1>Welcome To Poodle</h1>
+    <h3>The New Social Network That Lets <em>You</em> Build your Networks, How <em>You</em> Want To.</h3>
+    <%= link_to 'Learn More', about_path, class: 'btn-lg btn-primary'%>
+  </div>
+</div>
+<!-- /Full Page Image Header Area -->
+
+
+<!-- Intro -->
+<div id="intro" class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h2>share your ideas, photos and lifestyle with who you want</h2>
+        <p class="lead">some filler text here that will later be replaced with some other stuff. hey, that picture of the city skyline looks really nice doesn't it?</a>.</p>
+        <% if user_signed_in? %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"btn btn-success btn-large" %>
+        <% else %>
+          <%= link_to 'Sign-In', new_user_session_path, class:"btn btn-success btn-large" %>
+          <%= link_to 'Register', new_user_registration_path, class:"btn btn-warning btn-large" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Intro -->
+
+<!-- Services -->
+<div id="services" class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>How It Works</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2 text-center">
+        <div class="service-item">
+          <i class="service-icon icon-rocket"></i>
+          <h4>Integrate with Facebook and Twitter</h4>
+          <p>We work with Facebook and Twitter so that you can see what your friends and family are saying</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="service-item">
+          <i class="service-icon icon-magnet"></i>
+          <h4>Create Groups</h4>
+          <p>with poodle you create the groups that you want to see. Friends, Family, Work, the choice is yours</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="service-item">
+          <i class="service-icon icon-shield"></i>
+          <h4>Share Your Photos With Your Friends Or The World</h4>
+          <p>you choose who see's your photo's. Share them with your friends and family or share them with the rest of the Poodle community. The choice is yours!</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="service-item">
+          <i class="service-icon icon-pencil"></i>
+          <h4>outreach and meet new people</h4>
+          <p>Friend similar people with similar ideas. outreach. and crrate new relationships</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Services -->
+
+
+
+

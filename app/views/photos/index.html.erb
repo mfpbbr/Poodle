@@ -1,3 +1,5 @@
+<%= render 'pages/home'%>
+
 <% if user_signed_in? %>
   <%= link_to 'New Photo', new_photo_path %>
 <% end %>
@@ -5,14 +7,17 @@
 <div id='photo' class="transitions-enabled infinite-scroll clearfix">
   <% @photos.each do |photo| %>
     <div class='box'>
-      <%= image_tag photo.image.url(:medium) %>
+      <%= link_to image_tag(photo.image.url(:medium)), photo %>
       <div class="panel-body">
         <%= photo.description %>
+        <br/>
         <%= photo.user.try(:email) %>
-        <%= link_to 'Show', photo %>
+        
         <% if photo.user == current_user %>
-          <%= link_to 'Edit', edit_photo_path(photo) %>
-          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="actions">
+            <%= link_to 'Edit', edit_photo_path(photo) %>
+            <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
         <% end %>
       </div>
     </div>
