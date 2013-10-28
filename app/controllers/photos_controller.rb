@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
  
   def index
-    @photos = Photo.all
+    @photos = Photo.all.order('created_at DESC')
   end
 
   
