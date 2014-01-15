@@ -1,5 +1,7 @@
 #Poodle
 
-Poodle is a social network network designed using the rails framework. It's purpose is to create deeper, more personal relationships with those closest to you. Create groups with your best friends, co-workers or family. Poodle is constantly changing and always evolving, so keep a lookout for newest features.
+Poodle is a test project for a social network I'm currently working on. The purpose was to test functionallity of allowing users to upload images to a main gallery. The images are saved to the site using AWS.
+
+This repository is no longer being managed. To view further advancedment of the Poodle social network go to github.com/mitchcail/Chipper. 
 
 by: Mitch Cail
